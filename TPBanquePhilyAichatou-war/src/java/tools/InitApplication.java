@@ -18,6 +18,8 @@ import javax.servlet.annotation.WebListener;
  * Web application lifecycle listener.
  *
  * @author Mathieu
+ * @author Tom Phily
+ * @version edited
  */
 @WebListener
 public class InitApplication implements ServletContextListener {

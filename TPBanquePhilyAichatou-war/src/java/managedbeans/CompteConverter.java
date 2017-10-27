@@ -19,6 +19,8 @@ import javax.naming.NamingException;
  * dans les pages JSF ou dans les Backing beans, sans qu'on ait besoin de
  * spécifier un attribut converter = ou même d'instancier ce convertisseur
  * @author richard
+ * @author Tom Phily
+ * @version edited
  */
 @FacesConverter(forClass = entities.CompteBancaire.class) 
 public class CompteConverter implements Converter {

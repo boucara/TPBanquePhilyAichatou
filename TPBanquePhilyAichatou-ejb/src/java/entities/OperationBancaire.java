@@ -19,6 +19,8 @@ import javax.persistence.Temporal;
 /**
  *
  * @author Mathieu
+ * @author Tom Phily
+ * @version edited
  */
 @Entity
 @NamedQueries({

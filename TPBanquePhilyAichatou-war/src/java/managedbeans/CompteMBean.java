@@ -20,6 +20,8 @@ import javax.inject.Named;
 /**
  *
  * @author Mathieu
+ * @author Tom Phily
+ * @version edited
  */
 @Named(value = "compteMBean")
 @ViewScoped

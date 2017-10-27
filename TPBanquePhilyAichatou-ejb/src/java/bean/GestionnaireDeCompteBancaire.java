@@ -13,7 +13,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
+/**
+ * @author Tom Phily
+ * @author Aichatou Traore
+ */
 @Stateless
 @LocalBean
 public class GestionnaireDeCompteBancaire {
