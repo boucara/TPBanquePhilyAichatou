@@ -35,6 +35,15 @@ public class CompteMBean implements Serializable {
     private float solde1;
     private float solde2;
     private CompteConverter compteConverter;
+    private long idCompteBancaire;
+
+    public long getIdCompteBancaire() {
+        return idCompteBancaire;
+    }
+
+    public void setIdCompteBancaire(long idCompteBancaire) {
+        this.idCompteBancaire = idCompteBancaire;
+    }
 
     public CompteMBean() {
     }
@@ -97,13 +106,12 @@ public class CompteMBean implements Serializable {
 
     public Collection<OperationBancaire> getOperations() {
         System.out.println("### OBTENTION DE LA LISTE DES OPERATIONS ###");
-        Collection<OperationBancaire> operations = compte.getOperations();
+        Collection<OperationBancaire> operations = gestionnaireDeCompteBancaire.getOperations(compte);
         return operations;
     }
 
     public String showOperation(CompteBancaire c) {
-        this.compte = c;
-        return "details?faces-redirect=true&amp;includeViewParams=true";
+        return "details?idCompteBancaire="+c.getId()+"&faces-redirect=true";
     }
 
     public Collection<CompteBancaire> getComptes() {
@@ -193,5 +201,9 @@ public class CompteMBean implements Serializable {
         addFlashMessage(new FacesMessage(FacesMessage.SEVERITY_INFO, "Gestion des comptes", "Suppression effectuée avec succès"));
 
         return "afficher?faces-redirect=true";
+    }
+    
+    public void loadCompteBancaire(){
+        this.compte = gestionnaireDeCompteBancaire.getCompteById(idCompteBancaire);
     }
 }

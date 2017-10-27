@@ -12,6 +12,9 @@
             
             <f:metadata>
                 <f:viewParam name="nombre" value="#{bean.nombre}"/>
+                <f:viewParam name="idCompteBancaire" value="#{compteMBean.idCompteBancaire}"  
+               required="true"/>  
+                <f:viewAction action="#{compteMBean.loadCompteBancaire}"/> 
             </f:metadata>
 
             <ui:define name="content">

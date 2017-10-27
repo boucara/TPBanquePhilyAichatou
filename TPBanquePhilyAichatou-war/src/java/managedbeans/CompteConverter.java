@@ -29,7 +29,7 @@ public class CompteConverter implements Converter {
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
             String id = value.substring(0, value.indexOf(" "));
-            return dcm.getCompteById(id);
+            return dcm.getCompteById(Long.getLong(id));
     }
 
     @Override
