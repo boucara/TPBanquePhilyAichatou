@@ -1,0 +1,115 @@
+@media print {
+     #printId { display: none; }
+}
+#javax_faces_developmentstage_messages li {
+    width: 960px;
+    display: inline-block;
+    
+}
+#javax_faces_developmentstage_messages{
+    padding: 0;
+    text-align: center;
+}
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    height: 80px;
+    text-align: center;
+}
+
+body{
+    margin: 0px;
+}
+
+#menu{
+    margin-left: auto;
+    margin-right: auto;
+    width: 740px;
+}
+
+table td{
+    text-align: center;
+}
+#header {
+    height: 60px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+input[type=submit]{
+    float: right;
+}
+
+#top a{
+    float: left;
+    padding: 3px 10px 3px 10px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+}
+
+#left {
+    float: left;
+    background-color: #DDD;
+    padding: 5px;
+    width: 150px;
+    box-shadow: 0 0 20px black;
+    text-align: center;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.action{
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.update{
+    float: right;
+}
+.back{
+    float: left;
+}
+.center_content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 5px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: orange;
+}
+
+

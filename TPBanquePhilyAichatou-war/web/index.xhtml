@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./templates/template_default.xhtml">
+
+            <ui:define name="content">
+                Bienvenue sur le gestionnaire de comptes bancaires de Mathieu Miollan.<br/>
+                <h2>Fonctionnalité du projet</h2>
+                <ul>
+                    <li>Créer un compte ;</li>
+                    <li>Affichage liste des comptes ;</li>
+                    <li>Effectuer un transfert d'un compte à un autre ;</li>
+                    <li>Effectuer un retrait ;</li>
+                    <li>Effectuer un transfert ;</li>
+                    <li>Supprimer les comptes ;</li>
+                    <li>Afficher la liste des opérations bancaires.</li>
+                </ul>
+                À noter qu'il y a deux façons d'effectuer un retrait ou un dépôt. Soit par le menu adéquate en haut, soit via la liste des comptes, par des popup.
+                <br/>
+                <h2>Composants PrimeFaces utilisés mais non étudiés en TP</h2>
+                <ul>
+                    <li>PopUp (<a href="http://www.primefaces.org/showcase-labs/ui/dialog.jsf">http://www.primefaces.org/showcase-labs/ui/dialog.jsf</a>) ;</li>
+                    <li>Affichage des messages (<a href="http://www.primefaces.org/showcase-labs/ui/messages.jsf">http://www.primefaces.org/showcase-labs/ui/messages.jsf</a>) ;</li>
+                    <li>Classement dans l'ordre croissant et décroissant des données fonctionnel (ajout d'une collection de comptes bancaires, pour ne pas avoir à la recharger à chaque fois) ;</li>
+                    <li>Fonction imprimer pour les opérations bancaires (<a href="http://www.primefaces.org/showcase-labs/ui/printer.jsf">http://www.primefaces.org/showcase-labs/ui/printer.jsf</a>) ;</li>
+                    <li>Utilisation d'icônes (<a href="http://www.primefaces.org/showcase-labs/ui/commandButton.jsf">http://www.primefaces.org/showcase-labs/ui/commandButton.jsf</a>).</li>     
+                </ul>
+                <br/>
+                <h2>Autres améliorations</h2>
+                <ul>
+                    <li>Remise en forme des messages d'erreur (centré sur la page) ;</li>
+                    <li>Affichage dans la liste des comptes pour les opérations (pas besoin de rentrer les informations).</li>
+                </ul>
+                <br/>
+                <h2 style="color: green;">Points forts</h2>
+                <ul>
+                    <li>Interface esthétique et simple d'utilisation ;</li>
+                    <li>Tri fonctionnel ;</li>
+                    <li>Utilisation d'un converter pour le choix du compte lors d'un transfert, retrait ou dépôt ;</li>
+                    <li>Possibilité d'imprimer la liste des opérations bancaires ;</li>
+                    <li>Affichage de message indiquant l'action réalisée.</li>
+                    <li>Utilisation d'un weblistener pour générer le jeu de données.</li>
+                </ul>
+                <br/>
+                <h2 style="color: red;">Points faibles</h2>
+                <ul>
+                    <li>Pas de fonction imprimer pour la liste des comptes (problème pour ne pas afficher les 4 dernières colonnes) ;</li>
+                    <li>Pas de gestion d'accès (login) ;</li>
+                    <li>Possibilité de rentrer des chiffres négatifs pour le montant des opérations.</li>                  
+                </ul>
+                <br/>
+                <h2>Screenshots</h2>
+                <h:graphicImage value="/resources/screen1.png" width="960px"/>
+                <center><i>1 - Liste des comptes</i></center>
+                <h:graphicImage value="/resources/screen2.png" width="960px"/>
+                <center><i>2 - PopUp de retrait</i></center>
+                <h:graphicImage value="/resources/screen3.png" width="960px"/>
+                <center><i>3 - Messages</i></center>
+                <h:graphicImage value="/resources/screen4.png" width="960px"/>
+                <center><i>4 - Interface de dépôt, message d'erreur</i></center>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/template_default.xhtml">
+            
+            <f:metadata>
+                <f:viewParam name="nombre" value="#{bean.nombre}"/>
+            </f:metadata>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        <h1><h:outputText value="Détails des opérations pour le compte numéro #{compteMBean.compte.id} de #{compteMBean.compte.nomProprio}"/></h1><br/>
+                        <h:commandLink id="printId" value="Imprimer le tableau" style="float: right;"  styleClass="printButton">
+                            <p:printer target="listOperations" />
+                        </h:commandLink>
+                        <p:dataTable value="#{compteMBean.operations}" id="listOperations" var="item">
+                            <p:column sortBy="#{item.date}">
+                                <f:facet name="header">
+                                    <h:outputText value="Date"/>
+                                </f:facet>
+                                <h:outputText value="#{item.date}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.description}">
+                                <f:facet name="header">
+                                    <h:outputText value="Description"/>
+                                </f:facet>
+                                <h:outputText value="#{item.description}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.montant}">
+                                <f:facet name="header">
+                                    <h:outputText value="Montant"/>
+                                </f:facet>
+                                <h:outputText value="#{item.montant}"/>
+                            </p:column>
+                        </p:dataTable>
+                        <br/>
+                        <h:commandLink id="back" value="Retour à la liste des comptes" class="back" action="#{compteMBean.list}"/>
+                        
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>
+
+

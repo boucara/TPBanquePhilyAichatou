@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./../resources/css/default.css" media="all" rel="stylesheet" type="text/css" />
+        <link href="./../resources/css/cssLayout.css" media="all" rel="stylesheet" type="text/css" />
+        <title>Mathieu Miollan - Gestionnaire de compte bancaire</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">
+            <div id="header">Gestionnaire de comptes bancaires</div>
+            <div id="menu">
+                <h:link outcome="index.xhtml" value="Accueil"/>
+                <h:link outcome="creer.xhtml" value="Créer un compte"/>
+                <h:link outcome="afficher.xhtml" value="Afficher les comptes"/>
+                <h:link outcome="transfert.xhtml" value="Transférer"/>
+                <h:link outcome="depot.xhtml" value="Effectuer un dépot"/>
+                <h:link outcome="retrait.xhtml" value="Effectuer un retrait"/>
+            </div>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

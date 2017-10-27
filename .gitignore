@@ -1,0 +1,21 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+rebel.xml
+
+######################
+# NetBeans
+######################
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+/nbproject/private/
+/TPBanquePhilyAichatou-ejb/nbproject/private/
+/TPBanquePhilyAichatou-war/nbproject/private/

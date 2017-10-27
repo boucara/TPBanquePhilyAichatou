@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/template_default.xhtml">
+
+            <ui:define name="content">
+                  <f:event type="javax.faces.event.PreRenderViewEvent" listener="#{compteMBean.refresh()}"/>
+
+                <f:view>
+
+                    <h:form>
+                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />  
+
+                        <h1><h:outputText value="Liste des comptes"/></h1>
+                        <br/>
+                        <p:dataTable value="#{compteMBean.comptes}" id="listeCompte" var="item" paginator="true" rows="10"  
+                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                            <p:column sortBy="#{item.id}" filterBy="#{item.id}" filterMatchMode="contains">
+                                <f:facet name="header">
+                                    <h:outputText value="ID"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.nomProprio}" filterBy="#{item.nomProprio}" filterMatchMode="contains">
+                                <f:facet name="header">
+                                    <h:outputText value="Propriétaire"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nomProprio}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.solde}">
+                                <f:facet name="header">
+                                    <h:outputText value="Solde"/>
+                                </f:facet>
+                                <h:outputText value="#{item.solde}"/>
+                            </p:column>
+                            <p:column id="retraitCol">
+                                <f:facet name="header">
+                                    <h:outputText value="Retrait"/>
+                                </f:facet>
+                                <p:commandButton icon="ui-icon-minus" action="#{compteMBean.setCompte(item)}" onclick="(retrait).show();"/>
+                                <p:dialog header="Effectuer un retrait" widgetVar="retrait" modal="true" height="40" resizable="false">
+                                    <h:outputText style="margin-right: 5px;" value="Montant :" />
+                                    <h:inputText  required="true" value="#{compteMBean.solde1}" title="Montant" />
+                                    <f:facet name="footer">  
+                                        <p:commandButton icon="ui-icon-check" value="Valider" update="listeCompte" action="#{compteMBean.retrait1()}"/>  
+                                    </f:facet>  
+                                </p:dialog>
+                            </p:column>
+                            <p:column id="depotCol">
+                                <f:facet name="header">
+                                    <h:outputText value="Dépot"/>
+                                </f:facet>
+                                <p:commandButton icon="ui-icon-plus" action="#{compteMBean.setCompte(item)}" onclick="(depot).show();" />
+                                <p:dialog header="Effectuer un dépôt" widgetVar="depot" modal="true" height="40" resizable="false">
+                                    <h:outputText style="margin-right: 5px;" value="Montant :" />
+                                    <h:inputText required="true" value="#{compteMBean.solde2}" title="Montant" />
+                                    <f:facet name="footer">  
+                                        <p:commandButton icon="ui-icon-check" value="Valider" update="listeCompte" action="#{compteMBean.depot1()}"/>  
+                                    </f:facet>             
+                                </p:dialog>
+                            </p:column>
+                            <p:column id="detailCol">
+                                <f:facet name="header">
+                                    <h:outputText value="Détails des opérations"/>
+                                </f:facet>
+                                <p:commandButton icon="ui-icon-search" action="#{compteMBean.showOperation(item)}"/>
+                            </p:column>
+                            <p:column id="supCol">
+                                <f:facet name="header">
+                                    <h:outputText value="Supprimer"/>
+                                </f:facet>
+                                <p:commandButton icon="ui-icon-trash" update="listeCompte" action="#{compteMBean.supprimer(item)}"/>
+                            </p:column>      
+                        </p:dataTable>
+
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>
+
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./templates/template_default.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+                    <h1><h:outputText value="Transférer"/></h1><br/>
+                    <h:form class="action">                  
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Compte à débiter :" for="compte1" />
+                            <h:selectOneMenu id="compte1" value="#{compteMBean.compte}" title="Compte 1" required="true" requiredMessage="This field is required."> 
+                                <f:selectItems var="item" itemLabel="#{item.id} - #{item.nomProprio}" value="#{compteMBean.comptes}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="Compte à créditer :" for="compte2" />
+                            <h:selectOneMenu id="compte2" value="#{compteMBean.compte1}" title="Compte 2" required="true" requiredMessage="This field is required."> 
+                                <f:selectItems var="item" itemLabel="#{item.id} - #{item.nomProprio}" value="#{compteMBean.comptes}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="Montant :" for="montant" />
+                            <h:inputText id="montant" required="true" value="#{compteMBean.solde}" title="Montant" />
+                        </h:panelGrid>
+                        <br/>
+                        <h:commandLink id="back" value="Retour à la liste des comptes" class="back" action="#{compteMBean.list}"/>
+                        <h:commandButton id="update" class="update" value="Valider" action="#{compteMBean.transferer}"/>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>
+
+
