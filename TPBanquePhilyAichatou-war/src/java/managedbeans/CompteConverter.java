@@ -40,7 +40,7 @@ public class CompteConverter implements Converter {
     private GestionnaireDeCompteBancaire lookupGestionnaireDeCompteBancaireBean() {
         try {
             Context c = new InitialContext();
-            return (GestionnaireDeCompteBancaire) c.lookup("java:global/TPBanqueMiollan/TPBanqueMiollan-ejb/GestionnaireDeCompteBancaire!bean.GestionnaireDeCompteBancaire");
+            return (GestionnaireDeCompteBancaire) c.lookup("java:global/TPBanquePhilyAichatou/TPBanquePhilyAichatou-ejb/GestionnaireDeCompteBancaire!bean.GestionnaireDeCompteBancaire");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

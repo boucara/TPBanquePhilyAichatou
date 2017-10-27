@@ -10,8 +10,9 @@ import entities.CompteBancaire;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.view.ViewScoped;
+
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
 import javax.inject.Named;
@@ -21,7 +22,7 @@ import javax.inject.Named;
  * @author Mathieu
  */
 @Named(value = "compteMBean")
-@SessionScoped
+@ViewScoped
 public class CompteMBean implements Serializable {
 
     @EJB
