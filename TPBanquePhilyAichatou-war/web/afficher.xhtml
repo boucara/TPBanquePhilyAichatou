@@ -44,27 +44,13 @@
                                 <f:facet name="header">
                                     <h:outputText value="Retrait"/>
                                 </f:facet>
-                                <p:commandButton icon="ui-icon-minus" action="#{compteMBean.setCompte(item)}" onclick="(retrait).show();"/>
-                                <p:dialog header="Effectuer un retrait" widgetVar="retrait" modal="true" height="40" resizable="false">
-                                    <h:outputText style="margin-right: 5px;" value="Montant :" />
-                                    <h:inputText  required="true" value="#{compteMBean.solde1}" title="Montant" />
-                                    <f:facet name="footer">  
-                                        <p:commandButton icon="ui-icon-check" value="Valider" update="listeCompte" action="#{compteMBean.retrait1()}"/>  
-                                    </f:facet>  
-                                </p:dialog>
+                                <p:commandButton icon="ui-icon-plus" action="#{compteMBean.showRetrait(item)}"/>
                             </p:column>
                             <p:column id="depotCol">
                                 <f:facet name="header">
                                     <h:outputText value="Dépot"/>
                                 </f:facet>
-                                <p:commandButton icon="ui-icon-plus" action="#{compteMBean.setCompte(item)}" onclick="(depot).show();" />
-                                <p:dialog header="Effectuer un dépôt" widgetVar="depot" modal="true" height="40" resizable="false">
-                                    <h:outputText style="margin-right: 5px;" value="Montant :" />
-                                    <h:inputText required="true" value="#{compteMBean.solde2}" title="Montant" />
-                                    <f:facet name="footer">  
-                                        <p:commandButton icon="ui-icon-check" value="Valider" update="listeCompte" action="#{compteMBean.depot1()}"/>  
-                                    </f:facet>             
-                                </p:dialog>
+                                <p:commandButton icon="ui-icon-plus" action="#{compteMBean.showDepot(item)}"/>
                             </p:column>
                             <p:column id="detailCol">
                                 <f:facet name="header">

@@ -115,6 +115,14 @@ public class CompteMBean implements Serializable {
     public String showOperation(CompteBancaire c) {
         return "details?idCompteBancaire="+c.getId()+"&faces-redirect=true";
     }
+    
+    public String showDepot(CompteBancaire c) {
+        return "depot2?idCompteBancaire="+c.getId()+"&faces-redirect=true";
+    }
+    
+    public String showRetrait(CompteBancaire c) {
+        return "retrait2?idCompteBancaire="+c.getId()+"&faces-redirect=true";
+    }
 
     public Collection<CompteBancaire> getComptes() {
         System.out.println("### OBTENTION DE LA LISTE DES COMPTES ###");
