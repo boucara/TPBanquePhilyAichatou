@@ -36,7 +36,6 @@ public class CompteMBean implements Serializable {
     private float solde;
     private float solde1;
     private float solde2;
-    private CompteConverter compteConverter;
     private long idCompteBancaire;
 
     public long getIdCompteBancaire() {
