@@ -10,7 +10,5 @@
         <property name="URL" value="jdbc:derby://localhost:1527/BanquePhilyAichatou"/>
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="banque" object-type="user" pool-name="derby_net_BanquePhilyAichatou_PhilyAichatouPool"/>
-    <jdbc-resource enabled="true" jndi-name="banque_pm" object-type="user" pool-name="derby_net_BanquePhilyAichatou_PhilyAichatouPool"/>
     <jdbc-resource enabled="true" jndi-name="banque__pm" object-type="user" pool-name="derby_net_BanquePhilyAichatou_PhilyAichatouPool"/>
 </resources>
