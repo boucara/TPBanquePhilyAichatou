@@ -44,10 +44,10 @@ public class GestionnaireDeCompteBancaire {
     }
 
     public void creerComptesTest() {
-        creerCompte(new CompteBancaire("John Lennon", 150000));
-        creerCompte(new CompteBancaire("Cartney", 950000));
-        creerCompte(new CompteBancaire("Ringo Starr", 20000));
-        creerCompte(new CompteBancaire("Georges Harrisson", 100000));
+        creerCompte(new CompteBancaire("Malek", 150000));
+        creerCompte(new CompteBancaire("Alkenathon", 950000));
+        creerCompte(new CompteBancaire("Shuriken", 20000));
+        creerCompte(new CompteBancaire("Freeman", 100000));
         creerCompte(new CompteBancaire("Phily tom", 100000));
         creerCompte(new CompteBancaire("Georges", 100000));
         creerCompte(new CompteBancaire("Aichatou", 100000));
@@ -56,12 +56,22 @@ public class GestionnaireDeCompteBancaire {
         creerCompte(new CompteBancaire("Marine", 100000));
         creerCompte(new CompteBancaire("Mami", 100000));
         creerCompte(new CompteBancaire("Malouk", 100000));
-        creerCompte(new CompteBancaire("Matt", 100000));
+        creerCompte(new CompteBancaire("Guizmo", 100000));
+        creerCompte(new CompteBancaire("Yohan", 20000));
+        creerCompte(new CompteBancaire("Bernard", 100000));
+        creerCompte(new CompteBancaire("Bertrand", 95000));
+        creerCompte(new CompteBancaire("Serge", 1000000));
+        creerCompte(new CompteBancaire("Boucara", 1000000));
+        creerCompte(new CompteBancaire("Bob", 1));
+        creerCompte(new CompteBancaire("Largo Winch", 2000000000));
+        creerCompte(new CompteBancaire("Mickey Mouse", 20000000));
+        creerCompte(new CompteBancaire("Picsou", 1000000000));
+        creerCompte(new CompteBancaire("Clint Easwood", 100));
     }
     
     public void transferer(CompteBancaire c1, CompteBancaire c2, float montant){
         c1.retirerArgent(montant);
-        OperationBancaire op = new OperationBancaire("Transfert en provenance de " + c1.getNomProprio()+" à "+c2.getNomProprio(), montant);
+        OperationBancaire op = new OperationBancaire("Transfert en provenance de " + c1 +" à "+c2+".", montant);
         c1.addOperationBancaire(op);
         c2.addOperationBancaire(op);
         c2.ajouterArgent(montant);
