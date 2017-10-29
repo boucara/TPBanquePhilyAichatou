@@ -28,7 +28,7 @@
                         </h:panelGrid>
                         <br/>
                         <h:commandLink id="back" value="Retour à la liste des comptes" class="back" action="#{compteMBean.list}"/>
-                        <h:commandButton id="update" class="update" value="Valider" action="#{compteMBean.transferer}"/>
+                        <h:commandButton id="update" class="update" value="Valider" action="#{compteMBean.transferer()}"/>
                     </h:form>
                 </f:view>
             </ui:define>

@@ -33,6 +33,7 @@ public class CompteMBean implements Serializable {
     private CompteBancaire compte;
     private CompteBancaire compte1;
     private String nomProprio;
+    private CompteConverter compteConverter;
     private float solde;
     private float solde1;
     private float solde2;
