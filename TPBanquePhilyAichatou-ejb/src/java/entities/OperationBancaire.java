@@ -19,8 +19,13 @@ import javax.persistence.Temporal;
 /**
  *
  * @author Mathieu
+ * @author Tom Phily
+ * @version edited
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "OperationBancaire.findByCompte", query = "SELECT o FROM CompteBancaire c join c.operations o where c.id = :id")
+})
 public class OperationBancaire implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

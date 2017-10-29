@@ -8,10 +8,13 @@
 
     <body>
 
-        <ui:composition template="./templates/template_default.xhtml">
+        <ui:composition template="./template_default.xhtml">
             
             <f:metadata>
                 <f:viewParam name="nombre" value="#{bean.nombre}"/>
+                <f:viewParam name="idCompteBancaire" value="#{compteMBean.idCompteBancaire}"  
+               required="true"/>  
+                <f:viewAction action="#{compteMBean.loadCompteBancaire}"/> 
             </f:metadata>
 
             <ui:define name="content">
@@ -38,7 +41,7 @@
                                 <f:facet name="header">
                                     <h:outputText value="Montant"/>
                                 </f:facet>
-                                <h:outputText value="#{item.montant}"/>
+                                <h:outputText value="#{item.montant}€"/>
                             </p:column>
                         </p:dataTable>
                         <br/>
