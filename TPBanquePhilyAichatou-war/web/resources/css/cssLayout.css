@@ -12,8 +12,8 @@
 }
 #top {
     position: relative;
-    background-color: #036fab;
-    color: white;
+    
+    color: black;
     padding: 5px;
     margin: 0px 0px 10px 0px;
     height: 80px;
@@ -23,8 +23,81 @@
 body{
     margin: 0px;
 }
-
 #menu{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+}
+#menu li{
+display:inline-block;
+position:relative;
+border-radius:8px 8px 0 0;
+}
+#menu a{
+text-decoration:none;
+display:block;
+padding:8px 32px;
+color:#fff;
+font-family:arial;
+font-size: 24px
+
+}
+#menu li:hover ul{
+max-height:15em;
+}
+#menu li:first-child{
+background-color: #65537A;
+background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+#menu li:nth-child(2){
+background-color: #729EBF;
+background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+}
+#menu li:nth-child(3){
+background-color: #F6AD1A;
+background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+}
+#menu li:nth-child(4){
+background-color: #65537A;
+background-image:-webkit-linear-gradient(top, #65537A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #65537A 0%, #9F391A 100%);
+}
+#menu li:nth-child(5){
+background-color: #DDD;
+background-image:-webkit-linear-gradient(top, #DDD 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #DDD 0%, #9F391A 100%);
+}
+#menu li:last-child{
+background-color: #CFFF6A;
+background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
+background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+}
+
+#menu-demo2 li:first-child:hover{
+background:#65537A;
+}
+#menu-demo2 li:nth-child(2):hover{
+background:#729EBF;
+}
+#menu-demo2 li:nth-child(3):hover{
+background:#F6AD1A;
+}
+#menu-demo2 li:nth-child(4):hover{
+background:#65537A;
+}
+#menu-demo2 li:nth-child(5):hover{
+background:#729EBF;
+}
+#menu-demo2 li:last-child:hover{
+background:#CFFF6A;
+}
+
+
+.menu{
     margin-left: auto;
     margin-right: auto;
     width: 740px;
